@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="t d">
+  <title id="t">World Clock TV system overview</title>
+  <desc id="d">A TV remote drives key handlers on each screen. The home screen shows a grid of city clocks fed by a one-second timer and the packaged IANA time zone database. A bundled city database and local preferences hold data. Network services provide weather, city photos and an approximate starting location. Ads, analytics and billing sit alongside, with a small Kotlin layer for billing, keep-awake and a screensaver service.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1b3d"/>
+      <stop offset="1" stop-color="#1b2f66"/>
+    </linearGradient>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #eaf0ff; }
+      .h { font-size: 26px; font-weight: 700; }
+      .k { font-size: 13px; fill: #9db8ff; letter-spacing: 1.5px; font-weight: 700; }
+      .b { font-size: 16px; }
+      .s { font-size: 14px; fill: #b9c9ee; }
+      .in { fill: #1e3a78; stroke: #6f9bff; stroke-width: 2; }
+      .ui { fill: #3a2c10; stroke: #f2a93b; stroke-width: 2; }
+      .tm { fill: #123a4a; stroke: #62d0e6; stroke-width: 2; }
+      .dt { fill: #2a2650; stroke: #a79bf0; stroke-width: 2; }
+      .nt { fill: #1c3b2c; stroke: #62d78f; stroke-width: 2; }
+      .arrow { stroke: #8fb0ff; stroke-width: 2; fill: none; marker-end: url(#a); }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8fb0ff"/></marker>
+  </defs>
+  <rect width="1200" height="640" rx="16" fill="url(#bg)"/>
+  <text x="40" y="52" class="h">World Clock TV: remote in, world time out</text>
+  <text x="40" y="78" class="s">Android TV, Flutter and Dart, with a small Kotlin layer for billing, keep-awake and a screensaver service.</text>
+
+  <rect x="40" y="120" width="230" height="150" rx="12" class="in"/>
+  <text x="60" y="150" class="k">TV REMOTE</text>
+  <text x="60" y="180" class="b">D-pad arrows</text>
+  <text x="60" y="206" class="b">Select / Enter</text>
+  <text x="60" y="232" class="b">Back</text>
+  <text x="60" y="256" class="s">No touchscreen required</text>
+
+  <rect x="330" y="120" width="300" height="150" rx="12" class="ui"/>
+  <text x="350" y="150" class="k">SCREEN INPUT LAYER</text>
+  <text x="350" y="180" class="b">Key handler per screen</text>
+  <text x="350" y="206" class="b">Grid index + header focus</text>
+  <text x="350" y="232" class="b">Search field and result focus</text>
+  <text x="350" y="256" class="s">Dialogs own their focus node</text>
+
+  <rect x="690" y="120" width="470" height="150" rx="12" class="tm"/>
+  <text x="710" y="150" class="k">CITY CLOCKS</text>
+  <text x="710" y="180" class="b">One-second timer, one clock map</text>
+  <text x="710" y="206" class="b">Packaged IANA tz data, location per city</text>
+  <text x="710" y="232" class="b">Cards re-render from the map (12-hour format)</text>
+  <text x="710" y="256" class="s">City detail adds weather metrics</text>
+
+  <path class="arrow" d="M270 195 L326 195"/>
+  <path class="arrow" d="M630 195 L686 195"/>
+
+  <rect x="40" y="330" width="360" height="130" rx="12" class="dt"/>
+  <text x="60" y="360" class="k">BUNDLED DATA</text>
+  <text x="60" y="388" class="b">City database (SQLite, read-only)</text>
+  <text x="60" y="414" class="b">CSV fallback, small seed list</text>
+  <text x="60" y="440" class="s">About 48k places, IANA zone id per row</text>
+
+  <rect x="440" y="330" width="320" height="130" rx="12" class="dt"/>
+  <text x="460" y="360" class="k">LOCAL STATE</text>
+  <text x="460" y="388" class="b">Selected and managed cities</text>
+  <text x="460" y="414" class="b">Settings, entitlements, recents</text>
+  <text x="460" y="440" class="s">Key-value preferences</text>
+
+  <rect x="800" y="330" width="360" height="130" rx="12" class="nt"/>
+  <text x="820" y="360" class="k">NETWORK (BEST EFFORT)</text>
+  <text x="820" y="388" class="b">Weather and city photo requests</text>
+  <text x="820" y="414" class="b">Approximate location for first city</text>
+  <text x="820" y="440" class="s">Failures fall back to placeholders</text>
+
+  <path class="arrow" d="M840 270 L840 326"/>
+  <path class="arrow" d="M600 270 L600 326"/>
+  <path class="arrow" d="M300 270 L240 326"/>
+
+  <rect x="40" y="510" width="560" height="100" rx="12" class="in"/>
+  <text x="60" y="540" class="k">SERVICES (DART)</text>
+  <text x="60" y="568" class="b">Interstitial and rewarded ads with timeouts and retry</text>
+  <text x="60" y="592" class="b">Sanitised analytics and crash reporting</text>
+
+  <rect x="640" y="510" width="520" height="100" rx="12" class="ui"/>
+  <text x="660" y="540" class="k">NATIVE (KOTLIN)</text>
+  <text x="660" y="568" class="b">Play Billing manager over method + event channels</text>
+  <text x="660" y="592" class="b">Keep-screen-on flag, wake lock, screensaver service</text>
+</svg>
